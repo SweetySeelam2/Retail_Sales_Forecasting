@@ -114,8 +114,12 @@ git clone https://github.com/your-username/Retail_Sales_Forecasting.git
 ## 📌 Author
 
 **Sweety Seelam**  
-Data Analyst | Forecasting | Business Intelligence | Power BI Specialist  
-🔗 Portfolio: [https://sweetyseelam2.github.io/SweetySeelam.github.io/](https://sweetyseelam2.github.io/SweetySeelam.github.io/)
+Business Analyst | Aspiring Data Scientist | Forecasting | Business Intelligence | Power BI Specialist                                      
+🔗 Links:                                                       
+Portfolio: https://sweetyseelam2.github.io/SweetySeelam.github.io/                                                
+Github: https://github.com/SweetySeelam2/Retail_Sales_Forecasting                                                 
+Linkedin: https://www.linkedin.com/in/sweetyrao670/                                                       
+PowerBI Dashboard: https://github.com/SweetySeelam2/Retail_Sales_Forecasting/blob/main/Retail_Sales_Dashboard.pdf                                                    
 
 ---
 
