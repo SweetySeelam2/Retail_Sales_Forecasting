@@ -1,0 +1,92 @@
+# 📘 Forecast_Model_Notes.txt
+
+This file summarizes the forecasting methodology and statistical modeling logic used in the Power BI dashboard for retail sales forecasting.
+
+---
+
+## 🎯 Regression-Based Forecasting Logic
+
+A **simple linear regression** model was implemented using DAX to predict future sales based on time (MonthIndex).
+
+### ▶️ Regression Equation
+```
+Forecast = Intercept + Slope * MonthIndex
+```
+
+---
+
+## 📐 Calculation of Slope and Intercept (Per SKU Category)
+
+### ✅ Slope (b)
+The slope is calculated using the formula:
+```
+b = (n * Σ(xy) - Σx * Σy) / (n * Σ(x^2) - (Σx)^2)
+```
+
+### ✅ Intercept (a)
+Once the slope is known, the intercept is calculated as:
+```
+a = AvgY - b * AvgX
+```
+
+### ✅ In DAX:
+```DAX
+VAR Slope =
+    DIVIDE(
+        n * SUMX(MonthSummary, [MonthIndex] * [MonthlySales]) -
+        SUMX(MonthSummary, [MonthIndex]) * SUMX(MonthSummary, [MonthlySales]),
+        n * SUMX(MonthSummary, [MonthIndex] * [MonthIndex]) -
+        POWER(SUMX(MonthSummary, [MonthIndex]), 2),
+        0
+    )
+
+VAR Intercept =
+    AVERAGEX(MonthSummary, [MonthlySales]) -
+    Slope * AVERAGEX(MonthSummary, [MonthIndex])
+```
+
+---
+
+## 📅 Filtering Logic
+
+Only the most recent 12 months are used when computing slope/intercept and forecast accuracy to ensure relevance:
+```DAX
+MonthIndex >= CurrentMonthIndex - 12
+```
+
+---
+
+## 📊 Forecast Evaluation Metrics
+
+### ✅ MAPE (Mean Absolute Percentage Error)
+```
+MAPE = SUMX(Actual-Forecast Table, ABS(Forecast - Actual)) / SUM(Actual)
+```
+
+### ✅ MAE (Mean Absolute Error)
+```
+MAE = AVERAGEX(Actual-Forecast Table, ABS(Forecast - Actual))
+```
+
+### ✅ RMSE (Root Mean Squared Error)
+```
+RMSE = SQRT(AVERAGEX(Actual-Forecast Table, (Forecast - Actual)^2))
+```
+
+These metrics were calculated for each SKU and visualized using Power BI.
+
+---
+
+## 🔍 Assumptions
+
+- Forecasts are calculated **per SKU category**
+- Data is **summarized by MonthIndex**
+- Only completed months are included in error metrics
+- Linear trend line is assumed (no seasonality)
+
+---
+
+## 📌 Purpose
+
+This logic underpins the 3-month forecast table, the MAPE-by-SKU chart, and monthly forecast error visuals in the Power BI dashboard.
+
