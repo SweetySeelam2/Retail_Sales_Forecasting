@@ -123,7 +123,9 @@ PowerBI Dashboard: https://github.com/SweetySeelam2/Retail_Sales_Forecasting/blo
 
 ---
 
-## 📜 License
+## 🔒 Proprietary & All Rights Reserved
 
-This project is licensed under the MIT License. See `LICENSE` file for details.
+© 2025 Sweety Seelam. This work is proprietary and protected by copyright. All content, models, code, and visuals are © 2025 Sweety Seelam. No part of this project, app, code, or analysis may be copied, reproduced, distributed, or used for any purpose—commercial or otherwise—without explicit written permission from the author.
+
+For licensing, commercial use, or collaboration inquiries, please contact: Email: sweetyseelam2@gmail.com
 
