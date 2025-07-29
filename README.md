@@ -2,7 +2,7 @@
 
 ## 📌 Project Overview
 
-This Power BI dashboard analyzes **retail sales performance**, **sales forecasting accuracy**, and **SKU-level business insights** using a stylized Coffee Shop theme. It integrates interactive filters, sales trend visualizations, forecast error metrics, and strategic recommendations for retail stakeholders.
+This Power BI dashboard analyzes **retail sales performance**, **sales forecasting accuracy**, and **SKU-level business insights**. It integrates interactive filters, sales trend visualizations, forecast error metrics, and strategic recommendations for retail stakeholders.
 
 ---
 
